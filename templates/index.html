@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p>This assignment required me to build a web app that scraped various websites for data related to the Mission to Mars, and display it on a single HTML page</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    </div>
+
+    <div>
+        <h3><strong>NASA Mars News</strong></h3>
+        <p><em>{{ mars['Mars News Title']}}</em></p>
+        <p>{{ mars['Mars News Paragraph']}}</p>
+    </div>
+
+    <hr>
+
+    <div>
+        <h3><strong>Mars Featured Image</strong></h2>
+        <img src="{{ mars['Mars Featured Image (URL)']}}" alt="Featured Mars Image">
+    </div>
+
+    <div>
+        <h3><strong>Mars Weather</strong></h3>
+        <p>{{ mars['Mars Weather']}}</p>
+    </div>
+
+    <div>
+        <h3><strong>Mars Facts Table</strong></h3>
+        <p>{{ mars['Mars Facts Table'] | safe}}</p>
+    </div>
+
+    <div>
+        <h3><strong>Hemisphere Images</strong></h3>
+        <img src="{{ mars['Mars Hemisphere Image URLs'][0]}}" alt='Cerberus Hemisphere Enhanced'>
+        <img src="{{ mars['Mars Hemisphere Image URLs'][1]}}" alt='Schiaparelli Hemisphere Enhanced'>
+        <img src="{{ mars['Mars Hemisphere Image URLs'][2]}}" alt='Syrtis Major Hemisphere Enhanced'>
+        <img src="{{ mars['Mars Hemisphere Image URLs'][3]}}" alt='Valles Marineris Hemisphere Enhanced'>
+    </div>
+
+  </div>
+
+  <br>
+  <hr>
+
+  <footer class="footer text-center">
+        <p><strong><em>2018-2019 | UNC Data Analytics Bootcamp | Amy Vargas-Tonsi</em></strong></p>
+  </footer>
+
+</body>
+
+</html>
